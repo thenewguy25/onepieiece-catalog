@@ -1,0 +1,76 @@
+✅ Project: One Piece Character Encyclopedia
+🔧 Project Setup & Environment Tasks
+[x] Create Laravel project
+
+Run laravel new onepiece-catalog or use Composer.
+
+[x] Install required PHP extensions
+
+Ensure PHP (via Homebrew) has necessary modules (e.g., curl, mbstring, json, etc.)
+
+[ x] Configure Apache Virtual Host (VHost)
+
+🔹 Edit /opt/homebrew/etc/httpd/extra/httpd-vhosts.conf
+
+🔹 Add VHost for onepiece.local
+
+🔹 Update /etc/hosts with: 127.0.0.1 onepiece.local
+
+🔹 Ensure Include directive is active in httpd.conf
+
+🔹 Restart Apache with brew services restart httpd
+
+🔹 Test in browser: http://onepiece.local
+
+[ x] Configure Laravel .env file
+
+Set APP_URL=http://onepiece.local
+
+Set DB connection if needed
+
+[ ] Install Laravel UI or Breeze (optional)
+
+Only if you decide later to add simple styling or templates
+
+🎯 Core Features (MVP)
+[x ] Create Character model, migration, and controller
+
+php artisan make:model Character -mcr
+
+[ x] Create view pages
+
+Index (grid of characters)
+
+Show (individual character page)
+
+[x] Create basic routes and controllers
+
+Define routes in web.php
+
+Controller methods: index(), show()
+
+[ ] Build out Blade views
+
+Use Tailwind or Bootstrap (optional)
+
+Show character data: name, bounty, fruit, crew, etc.
+
+🌐 External Data Integration
+[ ] Fetch data from One Piece API (e.g., https://onepieceapi.com or Jikan for general anime)
+
+Make calls using Http::get() or Guzzle
+
+[ ] Map API response to local model structure
+
+[ ] Decide: call live or cache locally
+
+Optionally store JSON snapshots to avoid excessive API calls
+
+🧪 Testing & Extras
+[ ] Add seeders or use stub data (if no API or for offline dev)
+
+[ ] Write minimal tests (optional)
+
+[ ] Add simple styles for presentation
+
+[ ] Add filtering by crew, fruit type, bounty, etc. (optional)
