@@ -1,61 +1,130 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🏴‍☠️ One Piece Character Catalog
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A fun side project I built while learning Laravel! As a seasoned developer exploring new frameworks, I wanted to create something both useful and entertaining - what better than a catalog of my favorite anime characters?
 
-## About Laravel
+## What's This About?
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+This is a Laravel web application that displays One Piece characters with their details, images, and search functionality. Think of it as a digital encyclopedia for the Straw Hat Pirates and their world!
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## ✨ Features
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+-   **🏴‍☠️ Straw Hat Crew**: Display the entire crew by default (because they're the best!)
+-   **🔍 Character Search**: Search for any One Piece character by name
+-   **📖 Character Details**: View detailed information about each character (bounty, devil fruit, crew, etc.)
+-   **��️ Dynamic Images**: Automatically fetch character images from Google Custom Search
+-   **⚡ API Integration**: Uses the One Piece API for character data
+-   **💾 Smart Caching**: Implements caching for improved performance and rate limit management
+-   **📱 Responsive Design**: Works great on desktop and mobile
 
-## Learning Laravel
+## 🛠️ Tech Stack
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+-   **Laravel 11**: PHP framework (learning this was the main goal!)
+-   **Bootstrap 5**: Frontend styling
+-   **One Piece API**: External API for character data
+-   **Google Custom Search API**: For character images
+-   **SQLite**: Database (for Laravel's internal needs)
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## �� Quick Setup
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+1. **Clone the repo**
 
-## Laravel Sponsors
+    ```bash
+    git clone git@github.com:thenewguy25/onepieiece-catalog.git
+    cd onepieiece-catalog
+    ```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+2. **Install dependencies**
 
-### Premium Partners
+    ```bash
+    composer install
+    ```
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+3. **Set up environment**
 
-## Contributing
+    ```bash
+    cp .env.example .env
+    php artisan key:generate
+    ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+4. **Configure API keys** (add to `.env`)
 
-## Code of Conduct
+    ```env
+    GOOGLE_API_KEY=your_google_api_key_here
+    GOOGLE_SEARCH_ENGINE_ID=your_search_engine_id_here
+    ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+5. **Run migrations**
 
-## Security Vulnerabilities
+    ```bash
+    php artisan migrate
+    ```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+6. **Start the server**
 
-## License
+    ```bash
+    php artisan serve
+    ```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+7. **Visit** `http://localhost:8000` and enjoy! 🎉
+
+## 🔑 API Keys Required
+
+You'll need:
+
+-   **Google Custom Search API key** - for character images
+-   **Google Custom Search Engine ID** - to configure the search
+
+Get them from the [Google Cloud Console](https://console.cloud.google.com/).
+
+## �� What I Learned
+
+As someone coming from other frameworks (like CakePHP), this project helped me understand:
+
+-   Laravel's service layer architecture
+-   Route naming and resource controllers
+-   Caching strategies
+-   External API integration
+-   Blade templating
+-   Laravel's HTTP client
+
+## 🤔 Why One Piece?
+
+Because it's awesome! But also because it has a rich character database that's perfect for learning API integration and data display patterns.
+
+## �� Screenshots
+
+### Home Page - Straw Hat Crew
+
+![Straw Hat Crew](./screenshots/homepage.png)
+_The main page displaying all Straw Hat crew members by default_
+
+### Character Search Results
+
+![Search Results](./screenshots/searchpage.png)
+_Searching for characters returns detailed information with images_
+
+### Character Detail Page
+
+![Character Details](./screenshots/detailpage.png)
+\*Detailed view showing character information, bounty, devil
+
+## 🐛 Known Issues
+
+-   Some character images might not load due to CORS restrictions (especially wikia/fandom links)
+-   Google API has rate limits (but we cache everything, so it's not too bad!)
+
+## 🚧 Future Improvements
+
+-   [ ] Add character relationships (crew members, allies, enemies)
+-   [ ] Implement character filtering by crew/affiliation
+-   [ ] Add character battle stats
+-   [ ] Create character comparison feature
+-   [ ] Add more detailed character backstories
+
+## 📝 License
+
+MIT License - feel free to use this for your own learning projects!
+
+---
+
+_Built with ❤️ and lots of ☕ while learning Laravel_
